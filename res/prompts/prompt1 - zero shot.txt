@@ -1,0 +1,12 @@
+Extract all date-event pairs from the TED document text below, following these rules:
+- Only include dates in dd/mm/yyyy format
+- Convert document types to standard abbreviations (e.g., "Delibera Giunta Comunale" -> "DGC")
+- Present results as a list of JSON objects with keys "event" and "date" only
+- Ignore ineligible events (e.g., revoked procedures, requests for clarification, contract conclusions)
+
+The output must be a list of JSON objects with keys: "event" (string), "date" (format must be dd/mm/yyyy).
+
+Analyze the following text:
+```
+%s
+```

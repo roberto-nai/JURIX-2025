@@ -1,0 +1,62 @@
+Extract all date-event pairs from the TED document text below, following these rules:
+- Only include dates in dd/mm/yyyy format
+- Convert document types to standard abbreviations (e.g., "Delibera Giunta Comunale" -> "DGC")
+- Present results as a list of JSON objects with keys "event" and "date" only
+- Ignore ineligible events (e.g., revoked procedures, requests for clarification, contract conclusions)
+
+Examples:
+
+Input text example 1:
+```
+Procedura aperta per la fornitura di servizi informatici. Determinazione Dirigenziale n. 452 del 15/03/2023. Data di pubblicazione dell'avviso: 20/03/2023. Richieste di informazioni e/o chiarimenti entro il 10/04/2023.
+```
+Correct output:
+[
+    {
+    "event": "DD n. 452",
+    "date": "15/03/2023"
+    }
+]
+
+Input text example 2:
+```
+Appalto di lavori pubblici aggiudicato con Delibera Giunta Comunale n. 78 del 25/06/2023. La procedura è stata preceduta da Determina a contrarre n. 114 del 12/05/2023. Decreto di aggiudicazione efficace n. 12997 del 10/06/2023 certificato il 01/07/2023.
+```
+Correct output:
+[
+    {
+    "event": "DGC n. 78",
+    "date": "25/06/2023"
+    },
+    {
+    "event": "DD n. 114",
+    "date": "12/05/2023"
+    },
+    {
+    "event": "DM n. 12997",
+    "date": "10/06/2023"
+    }
+]
+
+Input text example 3:
+```
+Procedura di gara indetta con Delibera del Consiglio dei Ministri n. 45 del 03/02/2023. È stata revocata in autotutela la procedura con Determinazione Dirigenziale DAD n. 67 del 28/02/2023. L'appalto è stato nuovamente indetto con Delibera di Giunta Regionale n. 112 del 15/03/2023.
+```
+Correct output:
+[
+    {
+    "event": "DCM n. 45",
+    "date": "03/02/2023"
+    },
+    {
+    "event": "DGR n. 112",
+    "date": "15/03/2023"
+    }
+]
+
+The output must be a list of JSON objects with keys: "event" (string), "date" (format must be dd/mm/yyyy).
+
+Analyze the following text:
+```
+%s
+```

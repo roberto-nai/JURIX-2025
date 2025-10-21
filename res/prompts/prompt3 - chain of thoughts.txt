@@ -1,0 +1,51 @@
+Extract all date-event pairs from the TED document text below. Think through the extraction process step by step to ensure accuracy:
+
+First, identify all dates in dd/mm/yyyy format in the text
+For each date, examine the surrounding context to find associated events
+Check if the event matches one of the relevant keywords (Delibera, Provvedimento, Decreto, etc.) or the related abbreviations
+Verify the event is not in the exclusion list (revoked procedures, requests for clarification, etc.)
+Convert document types to their standard abbreviations using the reference list
+Compile valid event-date pairs into a list of JSON objects.
+
+Let me walk through my thought process:
+
+Example analysis:
+```
+Procedura aperta per l'affidamento dei servizi di pulizia. Delibera Giunta Comunale n. 112 del 18/05/2023. La procedura è stata preceduta da Determina Dirigenziale n. 89 del 03/04/2023. Data di pubblicazione del bando: 25/05/2023. Richieste di informazioni e/o chiarimenti entro il 10/06/2023.
+```
+
+Step 1: Identify all dates in dd/mm/yyyy format:
+- 18/05/2023
+- 03/04/2023
+- 25/05/2023
+- 10/06/2023
+
+Step 2-4: For each date, check context for events and exclusions:
+- 18/05/2023 -> "Delibera Giunta Comunale n. 112" -> Valid event (matches "Delibera" keyword)
+- 03/04/2023 -> "Determina Dirigenziale n. 89" -> Valid event (matches "Determinazione" keyword)
+- 25/05/2023 -> "Data di pubblicazione del bando" -> Not an event in our keyword list -> Exclude
+- 10/06/2023 -> "Richieste di informazioni e/o chiarimenti" -> In exclusion list -> Exclude
+
+Step 5: Convert to standard abbreviations:
+- "Delibera Giunta Comunale n. 112" -> "DGC n. 112"
+- "Determina Dirigenziale n. 89" -> "DD n. 89"
+
+Step 6: Final list of JSON objects:
+[
+    {
+    "event": "DGC n. 112",
+    "date": "18/05/2023"
+    },
+    {
+    "event": "DD n. 89",
+    "date": "03/04/2023"
+    }
+]
+
+Now analyze the text below following this process.
+The output must be a list of JSON objects with keys: "event" (string), "date" (format must be dd/mm/yyyy).
+
+Analyze the following text:
+```
+%s
+```
