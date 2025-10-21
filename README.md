@@ -1,5 +1,4 @@
 # Event-log enrichment from procurement notices: an expert-validated LLM framework in the legal domain
-## Jurix 2025. 
 
 **Ivan Spada, Roberto Nai, Davide Audrito, Vittoria Sofia Margherita Trifiletti and Emilio Sulis**
 
