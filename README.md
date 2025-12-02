@@ -11,6 +11,8 @@ Legal and administrative sources often describe procedural steps that are not re
 
 ## Repository structure
 
+- `article/` — final article (short)
+
 - `res/` — resources and outputs
 	- `event_extraction/` — input and processed CSVs, LLM outputs
 	- `evaluation/` — annotation guidelines, samples and annotation spreadsheets
