@@ -45,4 +45,38 @@ Please see also the TED project here: [https://github.com/roberto-nai/TED-OD-EVE
 
 ---
 
+## Citation
+
+If you use these scripts, please cite:
+
+```bibtex
+@inproceedings{DBLP:conf/jurix/SpadaNATS25,
+	author       = {Ivan Spada and
+									Roberto Nai and
+									Davide Audrito and
+									Vittoria Margherita Sofia Trifiletti and
+									Emilio Sulis},
+	editor       = {R{\'{e}}ka Markovich and
+									Luigi Di Caro and
+									Amon Rapp and
+									Claudio Schifanella},
+	title        = {An Expert-Validated {LLM} Framework for Transforming Legal Procurement
+									Texts into Actionable Data},
+	booktitle    = {Legal Knowledge and Information Systems - {JURIX} 2025: The Thirty-eighth
+									Annual Conference, Turin, Italy, 9-11 December 2025},
+	series       = {Frontiers in Artificial Intelligence and Applications},
+	pages        = {356--363},
+	publisher    = {{IOS} Press},
+	year         = {2025},
+	url          = {https://doi.org/10.3233/FAIA251610},
+	doi          = {10.3233/FAIA251610},
+}
+```
+
+---
+
+
+
+---
+
 For questions or issues, please contact the project author [ivan.spada@unito.it](ivan.spada@unito.it).
